@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="array_test">Click Me</button>
+</body>
+<script>
+    function array() {
+        let arr = []
+        let a = 0
+        for (let i = 0; i <= 100; i++) {
+            arr.push(i)
+        }
+        a = arr.filter(num => num % 2 == 0).reduce((sum1, sum2) => sum1 + sum2, 0)
+
+        console.log(a)
+    }
+    document.getElementById("array_test").addEventListener("click", array);
+</script>
+
+</html>

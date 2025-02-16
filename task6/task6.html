@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="click_Remove">Removes the numbers that are divisible by 3</button>
+    <button id="add_number">Add Numbers 0 to 150</button>
+    <button id="add_number2">Add Numbers + 3</button>
+    <button id="index">print index 20 to 40</button>
+    <button id="sort">print sorted</button>
+</body>
+<script>
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            let j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+    document.getElementById("click_Remove").addEventListener("click", function () {
+
+        let arr1 = []
+
+        for (let i = 0; i <= 100; i++) {
+            arr1.push(i)
+
+        }
+        let div = arr1.filter(num => num % 3 != 0)
+        console.log(div)
+    })
+
+    document.getElementById("add_number").addEventListener("click", function () {
+
+
+        let arr2 = [];
+        for (let i = 0; i <= 100; i++) {
+            arr2.push(i);
+        }
+        for (let i = 101; i <= 150; i++) {
+            arr2.push(i)
+        }
+        console.log(arr2)
+    })
+
+    document.getElementById("add_number2").addEventListener("click", function () {
+        let arr3 = [];
+        let newarr3=[]
+        for (let i = 0; i <= 100; i++) {
+            arr3.push(i);
+            // arr3[i] = arr3[i] + 3
+        }
+        newarr3=arr3.map(num=>num+3)
+        console.log(newarr3)
+    }
+    )
+
+    document.getElementById("index").addEventListener("click", function () {
+        let arr4 = []
+        for (let i = 0; i <= 100; i++) {
+            arr4.push(i)
+        }
+        console.log(arr4.slice(20, 41))
+    }
+    )
+
+    document.getElementById("sort").addEventListener("click", function () {
+        let arr5 = []
+
+
+        for (let i = 0; i <= 100; i++) {
+            arr5.push(i)
+
+        }
+        shuffleArray(arr5);
+        console.log(arr5)
+        arr5.sort(function (a, b) { return b - a })
+        console.log(arr5)
+    }
+
+    )
+
+</script>
+
+</html>
