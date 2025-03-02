@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <label for="idname">Name: </label>
+        <input type="text" id="idname">
+    </div>
+    <div>
+        <button onclick="prediction()">submit</button>
+    </div>
+</body>
+<script>
+    function prediction()
+    {
+        const name=document.getElementById("idname").value.trim(); 
+        if(name=="")
+    {
+        alert("plase enter the name")
+        return ;
+    }
+    const url=`https://api.agify.io?name=${encodeURIComponent(name)}`
+    fetch(url)
+    .then(response =>response.json())
+    .then(data=>{
+        const { name, age } = data;
+        alert(`Your name is: ${name}\nYour age is: ${age !== null ? age : "Unknown"}`);
+    })
+    .catch(error => {
+    alert("Failed to fetch age. Please try again.");
+});
+    }
+</script>
+</html>
